@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江川ノエル - ミッションオペレーションズエンジニア</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --accent-color: #F08080;
+            --background-light: #ffffff;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--text-dark);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .left-panel {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.12), rgba(139, 0, 0, 0.08));
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .right-panel {
+            padding: 2rem;
+            background: var(--background-light);
+            border-radius: 10px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .skills-section {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(139, 0, 0, 0.2);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(139, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+        }
+
+        .experience-item h3 {
+            color: var(--primary-color);
+        }
+
+        .experience-date {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-bullet {
+            margin-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .experience-bullet::before {
+            content: "▹";
+            color: var(--primary-color);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 100%;
+        }
+
+        .senior-project {
+            background: rgba(139, 0, 0, 0.25);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 10px 10px 0;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .senior-project:hover {
+            transform: translateX(5px);
+            background: rgba(139, 0, 0, 0.3);
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .print-button:hover {
+            background: var(--accent-color);
+        }
+
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>江川 ノエル</h1>
+            <div class="contact-info">
+                <p>noelesenwa@gmail.com</p>
+                <p>678-899-3885</p>
+                <p>アトランタ、ジョージア州</p>
+            </div>
+
+            <div class="skills-section">
+                <h2 class="section-title">専門技術</h2>
+                
+                <div class="skills-category">
+                    <h3>指揮統制システム</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">先進戦闘管理システム</span>
+                        <span class="skill-tag">多領域指揮統制</span>
+                        <span class="skill-tag">統合全領域指揮統制</span>
+                        <span class="skill-tag">戦術データリンク</span>
+                        <span class="skill-tag">戦闘指揮システム</span>
+                        <span class="skill-tag">リアルタイム戦闘管理</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>防衛技術</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">自律システム</span>
+                        <span class="skill-tag">コンピュータビジョン</span>
+                        <span class="skill-tag">センサー融合</span>
+                        <span class="skill-tag">電子戦システム</span>
+                        <span class="skill-tag">標的捕捉システム</span>
+                        <span class="skill-tag">対無人機技術</span>
+                        <span class="skill-tag">ISRプラットフォーム</span>
+                        <span class="skill-tag">SIGINT システム</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>軍事作戦</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">統合作戦計画</span>
+                        <span class="skill-tag">インド太平洋軍作戦</span>
+                        <span class="skill-tag">軍事的意思決定</span>
+                        <span class="skill-tag">戦闘システム統合</span>
+                        <span class="skill-tag">戦術作戦</span>
+                        <span class="skill-tag">任務計画</span>
+                        <span class="skill-tag">戦力構造分析</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>技術統合</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">分散システム</span>
+                        <span class="skill-tag">エッジコンピューティング</span>
+                        <span class="skill-tag">ネットワークアーキテクチャ</span>
+                        <span class="skill-tag">システムエンジニアリング</span>
+                        <span class="skill-tag">API統合</span>
+                        <span class="skill-tag">クラウドインフラ</span>
+                        <span class="skill-tag">マイクロサービス</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>プログラム管理</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">国防総省調達</span>
+                        <span class="skill-tag">リスク管理</span>
+                        <span class="skill-tag">要件エンジニアリング</span>
+                        <span class="skill-tag">ステークホルダー管理</span>
+                        <span class="skill-tag">技術リーダーシップ</span>
+                        <span class="skill-tag">戦略的計画</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>国際防衛</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">自衛隊との連携</span>
+                        <span class="skill-tag">同盟国統合</span>
+                        <span class="skill-tag">異文化間コミュニケーション</span>
+                        <span class="skill-tag">連合作戦</span>
+                        <span class="skill-tag">対外軍事販売</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">セキュリティクリアランス・資格</h2>
+            <div class="skills-container">
+                <span class="skill-tag">TS/SCIクリアランス</span>
+                <span class="skill-tag">PMP</span>
+                <span class="skill-tag">CISSP</span>
+                <span class="skill-tag">DAWIA レベルIII</span>
+                <span class="skill-tag">CompTIA Security+</span>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h2 class="section-title">職務経歴</h2>
+            
+            <div class="experience-item">
+                <h3>主任ミッションシステムエンジニア</h3>
+                <p>ロッキード・マーティン - 先進戦闘システム部門</p>
+                <p class="experience-date">2015年1月 - 現在 (リモート)</p>
+                <p class="experience-bullet">インド太平洋地域全域に分散型指揮統制プラットフォームを構築・展開し、意思決定サイクルを65%短縮、任務成功率を40%向上</p>
+                <p class="experience-bullet">アジア太平洋地域15拠点にわたるマルチドメインセンサー融合システムの統合を主導し、99.99%の稼働率と標的捕捉速度85%向上を達成</p>
+                <p class="experience-bullet">3.5億ドルの統合軍近代化プログラムを統括し、自衛隊および米軍関係者と連携して統合戦闘管理能力を提供</p>
+                <p class="experience-bullet">先進的な自律システム統合フレームワークを開発し、空・陸・海の200以上の無人プラットフォームのシームレスな連携を実現</p>
+                <p class="experience-bullet">35名のエリートエンジニアチームを指揮し、次世代戦闘ソフトウェアの開発において、平均45%早期に5つの主要リリースを実現</p>
+                <p class="experience-bullet">統合作戦プラットフォームの革新的技術アーキテクチャを確立し、センサーからシューターまでの時間を75%短縮、精度を60%向上</p>
+                <p class="experience-bullet">国防総省および同盟国の主要関係者との戦略的パートナーシップを構築し、4億ドルの追加契約を確保、作戦展開範囲を300%拡大</p>
+                <p class="experience-bullet">最先端の自動化テストフレームワークを実装し、展開検証時間を85%短縮しながら、重要任務シナリオで99.9%の精度を達成</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>上級技術プログラムマネージャー</h3>
+                <p>ノースロップ・グラマン - 先進ミッションシステムズ</p>
+                <p class="experience-date">2013年5月 - 2015年1月 (リモート)</p>
+                <p class="experience-bullet">インド太平洋軍の統合軍事作戦向け統合指揮統制ソリューション開発の1.2億ドルプログラムを実行</p>
+                <p class="experience-bullet">12の軍事施設に先進的な戦場管理システムを構築・展開し、戦闘効果を45%改善</p>
+                <p class="experience-bullet">次世代軍事通信プラットフォームの革新的システムアーキテクチャを設計し、データ処理能力を300%向上</p>
+                <p class="experience-bullet">システム統合時間を55%短縮し信頼性を40%向上させる包括的なパフォーマンス指標フレームワークを確立</p>
+                <p class="experience-bullet">25名のクロスファンクショナルチームを率いて最先端の戦闘システムソフトウェアを開発し、重大な欠陥ゼロで8つの主要リリースを達成</p>
+                <p class="experience-bullet">開発プラクティスを改革し、展開サイクルを70%短縮、99.9%の初回受入率を達成</p>
+                <p class="experience-bullet">軍事エンドユーザー向けの革新的なトレーニングプログラムを開発し、運用エラーを85%削減</p>
+                <p class="experience-bullet">戦略的なステークホルダー管理と積極的な問題解決により、前例のない99%の顧客満足度を達成</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>上級システムエンジニア</h3>
+                <p>レイセオン・テクノロジーズ - 防衛システム部門</p>
+                <p class="experience-date">2009年6月 - 2013年5月 (リモート)</p>
+                <p class="experience-bullet">複数の作戦領域で運用効率を65%改善する革新的な軍事指揮統制システム統合ソリューションを設計</p>
+                <p class="experience-bullet">7,500万ドルの戦場管理システム近代化プログラムの技術要件分析を指揮</p>
+                <p class="experience-bullet">戦闘効果指標を85%改善する画期的なシステム仕様を確立</p>
+                <p class="experience-bullet">システム検証時間を70%短縮し、精度を45%向上させる自動テストプロトコルを開発</p>
+                <p class="experience-bullet">運用中断ゼロで8つの軍事施設に先進的な戦闘システムソフトウェアを展開</p>
+                <p class="experience-bullet">軍事要員の訓練時間を90%削減する包括的な技術文書を作成</p>
+                <p class="experience-bullet">重要任務システム展開において98%の初回受入率という優れた成果を達成</p>
+                <p class="experience-bullet">12名のエリートエンジニアチームを指揮し、革新的な戦闘システム統合ソリューションを開発</p>
+            </div>
+
+            <h2 class="section-title">学歴</h2>
+            <h3>ケース・ウェスタン・リザーブ大学</h3>
+            <p>電気工学理学士、2010年5月卒業</p>
+            <p>防衛システムおよび軍事通信専攻</p>
+            
+            <div class="senior-project">
+                <h3>卒業研究：先進的軍事通信制御システム</h3>
+                <p>リアルタイムマルチセンサーデータ融合を統合する革新的な戦場管理システムプロトタイプを開発</p>
+                <p>革新的な分散アーキテクチャにより指揮応答時間を75%改善</p>
+                <p>軍事技術革新と運用効果において学部最高栄誉を受賞</p>
+                <p>国防総省による大学研究パートナーシップを通じた更なる開発に選定</p>
+                <p>3つの全国防衛技術会議で研究成果を発表</p>
+            </div>
+        </div>
+    </div>
+    <button class="print-button" onclick="window.print()">履歴書を印刷</button>
+</body>
+</html>
