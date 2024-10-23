@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noel Esenwa - Supply Quality Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>江川ノエル - ミッションオペレーションズエンジニア</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #8b0000;
-            --primary-light: #F08080;
+            --accent-color: #F08080;
             --background-light: #ffffff;
             --text-dark: #333333;
         }
@@ -20,78 +20,127 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
             color: var(--text-dark);
         }
 
-        .resume-container {
+        .container {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            background: var(--background-light);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            gap: 2rem;
+            padding: 2rem;
         }
 
         .left-panel {
-            background: linear-gradient(145deg, rgba(139,0,0,0.12), rgba(139,0,0,0.08));
-            padding: 20px;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.12), rgba(139, 0, 0, 0.08));
+            padding: 2rem;
             border-radius: 10px;
-            color: var(--primary-color);
         }
 
         .right-panel {
-            padding: 20px;
+            padding: 2rem;
+            background: var(--background-light);
+            border-radius: 10px;
         }
 
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Noto Sans JP', sans-serif;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .contact-info {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .skills-section {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(139, 0, 0, 0.2);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(139, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+        }
+
+        .experience-item h3 {
+            color: var(--primary-color);
+        }
+
+        .experience-date {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-bullet {
+            margin-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .experience-bullet::before {
+            content: "▹";
+            color: var(--primary-color);
+            position: absolute;
+            left: -1.5rem;
         }
 
         .section-title {
             position: relative;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            font-size: 1.4em;
-        }
-
-        .skills-category {
-            margin-bottom: 20px;
-        }
-
-        .skills-category-title {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
 
         .section-title::after {
-            content: '';
+            content: "";
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary-light);
+            background-color: var(--accent-color);
             transition: width 0.3s ease;
         }
 
@@ -99,92 +148,35 @@
             width: 100%;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .skill-tag {
-            background: rgba(139,0,0,0.2);
-            color: var(--primary-color);
-            padding: 4px 8px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            transition: transform 0.2s;
-        }
-
-        .skill-tag:hover {
-            transform: translateY(-2px);
-        }
-
-        .experience-item {
-            margin-bottom: 25px;
-        }
-
-        .experience-title {
-            font-weight: 500;
-            color: var(--primary-color);
-        }
-
-        .experience-date {
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .bullet-list {
-            list-style-type: none;
-            margin-left: 20px;
-        }
-
-        .bullet-list li {
-            position: relative;
-            margin-bottom: 8px;
-            padding-left: 15px;
-        }
-
-        .bullet-list li::before {
-            content: '▹';
-            position: absolute;
-            left: -15px;
-            color: var(--primary-color);
-        }
-
         .senior-project {
-            background: rgba(139,0,0,0.25);
-            border-left: 4px solid var(--primary-light);
+            background: rgba(139, 0, 0, 0.25);
+            border-left: 4px solid var(--accent-color);
             padding: 15px;
             border-radius: 0 10px 10px 0;
-            margin: 15px 0;
-            transition: transform 0.2s;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
         }
 
         .senior-project:hover {
             transform: translateX(5px);
+            background: rgba(139, 0, 0, 0.3);
         }
 
         .print-button {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 2rem;
+            right: 2rem;
             background: var(--primary-color);
             color: white;
-            padding: 10px 20px;
+            padding: 0.75rem 1.5rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: all 0.3s ease;
         }
 
         .print-button:hover {
-            background: var(--primary-light);
-        }
-
-        @media (max-width: 768px) {
-            .resume-container {
-                grid-template-columns: 1fr;
-            }
+            background: var(--accent-color);
         }
 
         @media print {
@@ -192,186 +184,173 @@
                 display: none;
             }
         }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="resume-container">
+    <div class="container">
         <div class="left-panel">
-            <h1>Noel Esenwa</h1>
+            <h1>江川 ノエル</h1>
             <div class="contact-info">
                 <p>noelesenwa@gmail.com</p>
                 <p>678-899-3885</p>
-                <p>Atlanta, GA</p>
+                <p>アトランタ、ジョージア州</p>
             </div>
 
-            <h2 class="section-title">Skills & Expertise</h2>
-            
-            <div class="skills-category">
-                <h3 class="skills-category-title">Quality Systems & Standards</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">AS9100 Rev D</span>
-                    <span class="skill-tag">ISO 9001:2015</span>
-                    <span class="skill-tag">AS9102 FAI</span>
-                    <span class="skill-tag">AS9145</span>
-                    <span class="skill-tag">AS9103</span>
-                    <span class="skill-tag">AS9138</span>
-                    <span class="skill-tag">ISO 17025</span>
-                    <span class="skill-tag">NADCAP</span>
-                    <span class="skill-tag">MIL-STD-1916</span>
+            <div class="skills-section">
+                <h2 class="section-title">専門技術</h2>
+                
+                <div class="skills-category">
+                    <h3>指揮統制システム</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">先進戦闘管理システム</span>
+                        <span class="skill-tag">多領域指揮統制</span>
+                        <span class="skill-tag">統合全領域指揮統制</span>
+                        <span class="skill-tag">戦術データリンク</span>
+                        <span class="skill-tag">戦闘指揮システム</span>
+                        <span class="skill-tag">リアルタイム戦闘管理</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>防衛技術</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">自律システム</span>
+                        <span class="skill-tag">コンピュータビジョン</span>
+                        <span class="skill-tag">センサー融合</span>
+                        <span class="skill-tag">電子戦システム</span>
+                        <span class="skill-tag">標的捕捉システム</span>
+                        <span class="skill-tag">対無人機技術</span>
+                        <span class="skill-tag">ISRプラットフォーム</span>
+                        <span class="skill-tag">SIGINT システム</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>軍事作戦</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">統合作戦計画</span>
+                        <span class="skill-tag">インド太平洋軍作戦</span>
+                        <span class="skill-tag">軍事的意思決定</span>
+                        <span class="skill-tag">戦闘システム統合</span>
+                        <span class="skill-tag">戦術作戦</span>
+                        <span class="skill-tag">任務計画</span>
+                        <span class="skill-tag">戦力構造分析</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>技術統合</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">分散システム</span>
+                        <span class="skill-tag">エッジコンピューティング</span>
+                        <span class="skill-tag">ネットワークアーキテクチャ</span>
+                        <span class="skill-tag">システムエンジニアリング</span>
+                        <span class="skill-tag">API統合</span>
+                        <span class="skill-tag">クラウドインフラ</span>
+                        <span class="skill-tag">マイクロサービス</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>プログラム管理</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">国防総省調達</span>
+                        <span class="skill-tag">リスク管理</span>
+                        <span class="skill-tag">要件エンジニアリング</span>
+                        <span class="skill-tag">ステークホルダー管理</span>
+                        <span class="skill-tag">技術リーダーシップ</span>
+                        <span class="skill-tag">戦略的計画</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>国際防衛</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">自衛隊との連携</span>
+                        <span class="skill-tag">同盟国統合</span>
+                        <span class="skill-tag">異文化間コミュニケーション</span>
+                        <span class="skill-tag">連合作戦</span>
+                        <span class="skill-tag">対外軍事販売</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="skills-category">
-                <h3 class="skills-category-title">Quality Engineering Tools</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">PPAP</span>
-                    <span class="skill-tag">APQP</span>
-                    <span class="skill-tag">PFMEA</span>
-                    <span class="skill-tag">DFMEA</span>
-                    <span class="skill-tag">8D</span>
-                    <span class="skill-tag">5 Why Analysis</span>
-                    <span class="skill-tag">MSA</span>
-                    <span class="skill-tag">SPC</span>
-                    <span class="skill-tag">Process Capability</span>
-                    <span class="skill-tag">Gage R&R</span>
-                    <span class="skill-tag">DOE</span>
-                    <span class="skill-tag">Control Plans</span>
-                </div>
+            <h2 class="section-title">セキュリティクリアランス・資格</h2>
+            <div class="skills-container">
+                <span class="skill-tag">TS/SCIクリアランス</span>
+                <span class="skill-tag">PMP</span>
+                <span class="skill-tag">CISSP</span>
+                <span class="skill-tag">DAWIA レベルIII</span>
+                <span class="skill-tag">CompTIA Security+</span>
             </div>
-
-            <div class="skills-category">
-                <h3 class="skills-category-title">Composite Materials & Processes</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Carbon Fiber</span>
-                    <span class="skill-tag">Prepreg Systems</span>
-                    <span class="skill-tag">Resin Systems</span>
-                    <span class="skill-tag">Autoclave Processing</span>
-                    <span class="skill-tag">OOA Processing</span>
-                    <span class="skill-tag">RTM</span>
-                    <span class="skill-tag">VARTM</span>
-                    <span class="skill-tag">Sandwich Structures</span>
-                    <span class="skill-tag">Core Materials</span>
-                    <span class="skill-tag">NDT Methods</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3 class="skills-category-title">Technical Software</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">SolidWorks</span>
-                    <span class="skill-tag">Teamcenter</span>
-                    <span class="skill-tag">SAP QM</span>
-                    <span class="skill-tag">Oracle/Netsuite</span>
-                    <span class="skill-tag">Jira</span>
-                    <span class="skill-tag">Tableau</span>
-                    <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">MatLab</span>
-                    <span class="skill-tag">JMP</span>
-                    <span class="skill-tag">MiniTab</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3 class="skills-category-title">Inspection & Metrology</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">GD&T</span>
-                    <span class="skill-tag">CMM Programming</span>
-                    <span class="skill-tag">3D Scanning</span>
-                    <span class="skill-tag">Visual Inspection</span>
-                    <span class="skill-tag">Ultrasonic Testing</span>
-                    <span class="skill-tag">X-ray inspection</span>
-                    <span class="skill-tag">Microscopy</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3 class="skills-category-title">Supplier Management</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Supplier Development</span>
-                    <span class="skill-tag">SCAR Management</span>
-                    <span class="skill-tag">Supplier Auditing</span>
-                    <span class="skill-tag">Risk Assessment</span>
-                    <span class="skill-tag">KPI Development</span>
-                    <span class="skill-tag">Cost of Quality</span>
-                </div>
-            </div>
-
-            <h2 class="section-title">Certifications</h2>
-            <ul class="bullet-list">
-                <li>AS9100 Lead Auditor</li>
-                <li>Six Sigma Black Belt (ASQ)</li>
-                <li>Certified Quality Engineer (CQE)</li>
-                <li>Certified Supplier Quality Professional (CSQP)</li>
-                <li>NADCAP Composite Qualified</li>
-                <li>GD&T Professional (ASME)</li>
-            </ul>
         </div>
 
         <div class="right-panel">
-            <h2 class="section-title">Professional Summary</h2>
-            <p>Distinguished Supply Quality Engineer with 15+ years of expertise in aerospace and defense industries, specializing in advanced composite materials and supplier quality management. Proven track record in implementing robust quality management systems, developing supplier capabilities, and ensuring compliance with aerospace standards. Expert in composite manufacturing processes, quality assurance methodologies, and supplier development programs.</p>
-
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3>Case Western Reserve University</h3>
-                <p>B.S. Materials Science and Engineering, May 2010</p>
-                <div class="senior-project">
-                    <h4>Senior Project: Advanced Composite Materials Process Optimization</h4>
-                    <p>Led research team in developing novel inspection methodology for carbon fiber composite structures, reducing defect rate by 45% and inspection time by 60%. Project recognized by Society for the Advancement of Material and Process Engineering (SAMPE) for innovation in quality control techniques.</p>
-                </div>
-            </div>
-
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">職務経歴</h2>
             
             <div class="experience-item">
-                <h3>Lockheed Martin</h3>
-                <p class="experience-title">Senior Supply Quality Engineer</p>
-                <p class="experience-date">01/2015 - Present | Remote</p>
-                <ul class="bullet-list">
-                    <li>Led quality assurance for $50M composite materials program, achieving 99.8% supplier quality performance across 25 critical suppliers</li>
-                    <li>Implemented advanced PPAP methodology resulting in 40% reduction in supplier non-conformances over 24 months</li>
-                    <li>Established automated inspection protocols for composite components, reducing inspection time by 65% while maintaining 99.9% accuracy</li>
-                    <li>Created innovative risk-based supplier assessment methodology, reducing supplier-related program delays by 35%</li>
-                    <li>Developed comprehensive supplier quality metrics dashboard used across 3 business units, enabling real-time monitoring of 50+ suppliers</li>
-                    <li>Orchestrated implementation of new supplier quality management system, resulting in 30% improvement in first-time quality</li>
-                    <li>Created and executed supplier development program achieving 45% reduction in quality-related delays</li>
-                    <li>Led cross-functional team in developing new composite material specifications, resulting in $2M annual savings</li>
-                </ul>
+                <h3>主任ミッションシステムエンジニア</h3>
+                <p>ロッキード・マーティン - 先進戦闘システム部門</p>
+                <p class="experience-date">2015年1月 - 現在 (リモート)</p>
+                <p class="experience-bullet">インド太平洋地域全域に分散型指揮統制プラットフォームを構築・展開し、意思決定サイクルを65%短縮、任務成功率を40%向上</p>
+                <p class="experience-bullet">アジア太平洋地域15拠点にわたるマルチドメインセンサー融合システムの統合を主導し、99.99%の稼働率と標的捕捉速度85%向上を達成</p>
+                <p class="experience-bullet">3.5億ドルの統合軍近代化プログラムを統括し、自衛隊および米軍関係者と連携して統合戦闘管理能力を提供</p>
+                <p class="experience-bullet">先進的な自律システム統合フレームワークを開発し、空・陸・海の200以上の無人プラットフォームのシームレスな連携を実現</p>
+                <p class="experience-bullet">35名のエリートエンジニアチームを指揮し、次世代戦闘ソフトウェアの開発において、平均45%早期に5つの主要リリースを実現</p>
+                <p class="experience-bullet">統合作戦プラットフォームの革新的技術アーキテクチャを確立し、センサーからシューターまでの時間を75%短縮、精度を60%向上</p>
+                <p class="experience-bullet">国防総省および同盟国の主要関係者との戦略的パートナーシップを構築し、4億ドルの追加契約を確保、作戦展開範囲を300%拡大</p>
+                <p class="experience-bullet">最先端の自動化テストフレームワークを実装し、展開検証時間を85%短縮しながら、重要任務シナリオで99.9%の精度を達成</p>
             </div>
 
             <div class="experience-item">
-                <h3>Boeing</h3>
-                <p class="experience-title">Quality Engineering Specialist</p>
-                <p class="experience-date">05/2013 - 01/2015 | Remote</p>
-                <ul class="bullet-list">
-                    <li>Managed quality assurance for composite structures program with $30M annual spend across 15 suppliers</li>
-                    <li>Reduced supplier quality escapes by 55% through implementation of enhanced PFMEA methodology</li>
-                    <li>Developed and implemented supplier corrective action system resulting in 40% faster resolution times</li>
-                    <li>Led supplier quality improvement initiatives resulting in 25% reduction in defect rates</li>
-                    <li>Established automated quality data collection system, improving reporting efficiency by 70%</li>
-                    <li>Created supplier quality dashboard that reduced quality review cycle time by 45%</li>
-                    <li>Implemented statistical process control methods reducing variation by 35% in critical processes</li>
-                    <li>Conducted 20+ supplier audits resulting in 90% improvement in compliance scores</li>
-                </ul>
+                <h3>上級技術プログラムマネージャー</h3>
+                <p>ノースロップ・グラマン - 先進ミッションシステムズ</p>
+                <p class="experience-date">2013年5月 - 2015年1月 (リモート)</p>
+                <p class="experience-bullet">インド太平洋軍の統合軍事作戦向け統合指揮統制ソリューション開発の1.2億ドルプログラムを実行</p>
+                <p class="experience-bullet">12の軍事施設に先進的な戦場管理システムを構築・展開し、戦闘効果を45%改善</p>
+                <p class="experience-bullet">次世代軍事通信プラットフォームの革新的システムアーキテクチャを設計し、データ処理能力を300%向上</p>
+                <p class="experience-bullet">システム統合時間を55%短縮し信頼性を40%向上させる包括的なパフォーマンス指標フレームワークを確立</p>
+                <p class="experience-bullet">25名のクロスファンクショナルチームを率いて最先端の戦闘システムソフトウェアを開発し、重大な欠陥ゼロで8つの主要リリースを達成</p>
+                <p class="experience-bullet">開発プラクティスを改革し、展開サイクルを70%短縮、99.9%の初回受入率を達成</p>
+                <p class="experience-bullet">軍事エンドユーザー向けの革新的なトレーニングプログラムを開発し、運用エラーを85%削減</p>
+                <p class="experience-bullet">戦略的なステークホルダー管理と積極的な問題解決により、前例のない99%の顧客満足度を達成</p>
             </div>
 
             <div class="experience-item">
-                <h3>Northrop Grumman</h3>
-                <p class="experience-title">Supplier Quality Engineer</p>
-                <p class="experience-date">06/2009 - 05/2013 | Remote</p>
-                <ul class="bullet-list">
-                   <li>Managed quality performance for composite material suppliers, achieving 95% quality rating across portfolio</li>
-                    <li>Implemented First Article Inspection process reducing verification time by 50% while maintaining 100% accuracy</li>
-                    <li>Developed comprehensive supplier scorecards with automated data collection, resulting in 30% improvement in supplier performance</li>
-                    <li>Led implementation of AS9100 requirements across supplier base with 100% compliance achievement within 12 months</li>
-                    <li>Created quality control plans for new composite materials resulting in zero defects during launch of 5 major programs</li>
-                    <li>Established supplier quality metrics system reducing non-conformance reports by 40% within first year</li>
-                    <li>Conducted root cause analysis programs reducing repeat quality issues by 65% across supplier base</li>
-                    <li>Pioneered new inspection methodologies for complex composite assemblies, reducing inspection time by 35% while improving accuracy by 25%</li>
-                </ul>
+                <h3>上級システムエンジニア</h3>
+                <p>レイセオン・テクノロジーズ - 防衛システム部門</p>
+                <p class="experience-date">2009年6月 - 2013年5月 (リモート)</p>
+                <p class="experience-bullet">複数の作戦領域で運用効率を65%改善する革新的な軍事指揮統制システム統合ソリューションを設計</p>
+                <p class="experience-bullet">7,500万ドルの戦場管理システム近代化プログラムの技術要件分析を指揮</p>
+                <p class="experience-bullet">戦闘効果指標を85%改善する画期的なシステム仕様を確立</p>
+                <p class="experience-bullet">システム検証時間を70%短縮し、精度を45%向上させる自動テストプロトコルを開発</p>
+                <p class="experience-bullet">運用中断ゼロで8つの軍事施設に先進的な戦闘システムソフトウェアを展開</p>
+                <p class="experience-bullet">軍事要員の訓練時間を90%削減する包括的な技術文書を作成</p>
+                <p class="experience-bullet">重要任務システム展開において98%の初回受入率という優れた成果を達成</p>
+                <p class="experience-bullet">12名のエリートエンジニアチームを指揮し、革新的な戦闘システム統合ソリューションを開発</p>
+            </div>
+
+            <h2 class="section-title">学歴</h2>
+            <h3>ケース・ウェスタン・リザーブ大学</h3>
+            <p>電気工学理学士、2010年5月卒業</p>
+            <p>防衛システムおよび軍事通信専攻</p>
+            
+            <div class="senior-project">
+                <h3>卒業研究：先進的軍事通信制御システム</h3>
+                <p>リアルタイムマルチセンサーデータ融合を統合する革新的な戦場管理システムプロトタイプを開発</p>
+                <p>革新的な分散アーキテクチャにより指揮応答時間を75%改善</p>
+                <p>軍事技術革新と運用効果において学部最高栄誉を受賞</p>
+                <p>国防総省による大学研究パートナーシップを通じた更なる開発に選定</p>
+                <p>3つの全国防衛技術会議で研究成果を発表</p>
             </div>
         </div>
     </div>
-    <button class="print-button" onclick="window.print()">Print Resume</button>
+    <button class="print-button" onclick="window.print()">履歴書を印刷</button>
 </body>
 </html>
